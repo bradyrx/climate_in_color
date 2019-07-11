@@ -181,7 +181,7 @@ gist_data = {
 #------------------------------------------------------------------------------#
 # Maps pulled from papers
 #------------------------------------------------------------------------------#
-def pull(file):
+def png2rgb(file):
     # Load file
     img = Image.open(file)
     data = np.array(img)[...,:3]/255 # drop alpha channel and scale to 0-1
@@ -216,7 +216,10 @@ def pull(file):
 
 # Iterate through files
 files = glob.glob(os.path.join(os.path.dirname(__file__), 'cmaps', 'cmap[0-9].png'))
-paper_data = {os.path.splitext(os.path.basename(file))[0]:pull(file) for file in files}
+paper_data = {
+    os.path.splitext(os.path.basename(file))[0]: png2rgb(file)
+    for file in files
+    }
 
 #------------------------------------------------------------------------------#
 # Generate colormaps
