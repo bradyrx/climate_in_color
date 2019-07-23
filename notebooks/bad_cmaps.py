@@ -1,18 +1,44 @@
 #!/usr/bin/env python3
+"""Contains tools for loading bad colormaps."""
 import os
+import re
 import numpy as np
 import glob as glob
 import matplotlib.cm as mcm
 import matplotlib.colors as mcolors
+import proplot as plot
 from matplotlib import rcParams
 from PIL import Image
 lut = rcParams['image.lut']
 
 #------------------------------------------------------------------------------#
-# Hardcoded bad maps
+# Hardcoded bad maps from matplotlib repo
 #------------------------------------------------------------------------------#
-# MATLAB maps
-matlab_data = {
+_gnu_green = lambda x: x**3
+_gnu_red   = lambda x: np.sqrt(x)
+_gnu_blue  = lambda x: np.sin(x * 2 * np.pi)
+_gnu2_red = lambda x: x / 0.32 - 0.78125
+_gnu2_green = lambda x: 2 * x - 0.84
+def _gnu2_blue(x):
+    ret = np.zeros(len(x))
+    m = (x < 0.25)
+    ret[m] = 4 * x[m]
+    m = (x >= 0.25) & (x < 0.92)
+    ret[m] = -2 * x[m] + 1.84
+    m = (x >= 0.92)
+    ret[m] = x[m] / 0.08 - 11.5
+    return ret
+_hardcoded_data = {
+    'gnuplot':{
+        'red':   _gnu_red,
+        'green': _gnu_green,
+        'blue':  _gnu_blue,
+        },
+    'gnuplot2':{
+        'red':   _gnu2_red,
+        'green': _gnu2_green,
+        'blue':  _gnu2_blue,
+        },
     'jet':{
         'red': ((0., 0, 0), (0.35, 0, 0), (0.66, 1, 1), (0.89, 1, 1), (1, 0.5, 0.5)),
         'green': ((0., 0, 0), (0.125, 0, 0), (0.375, 1, 1), (0.64, 1, 1), (0.91, 0, 0), (1, 0, 0)),
@@ -48,35 +74,6 @@ matlab_data = {
                 (0.841270, 1.000000, 1.000000),
                 (0.857143, 0.937500, 0.937500),
                 (1.0, 0.09375, 0.09375))
-        }
-    }
-
-# GNU maps
-_gnu_green = lambda x: x**3
-_gnu_red   = lambda x: np.sqrt(x)
-_gnu_blue  = lambda x: np.sin(x * 2 * np.pi)
-_gnu2_red = lambda x: x / 0.32 - 0.78125
-_gnu2_green = lambda x: 2 * x - 0.84
-def _gnu2_blue(x):
-    ret = np.zeros(len(x))
-    m = (x < 0.25)
-    ret[m] = 4 * x[m]
-    m = (x >= 0.25) & (x < 0.92)
-    ret[m] = -2 * x[m] + 1.84
-    m = (x >= 0.92)
-    ret[m] = x[m] / 0.08 - 11.5
-    return ret
-
-gnu_data = {
-    'gnuplot':{
-        'red':   _gnu_red,
-        'green': _gnu_green,
-        'blue':  _gnu_blue,
-        },
-    'gnuplot2':{
-        'red':   _gnu2_red,
-        'green': _gnu2_green,
-        'blue':  _gnu2_blue,
         },
     'nipy_spectral':{
         'red': [(0.0, 0.0, 0.0), (0.05, 0.4667, 0.4667),
@@ -113,10 +110,6 @@ gnu_data = {
                 (0.90, 0.0, 0.0), (0.95, 0.0, 0.0),
                 (1.0, 0.80, 0.80)],
         },
-    }
-
-# GIST package maps are by David H. Munro.
-gist_data = {
     'gist_rainbow':(
         (0.000, (1.00, 0.00, 0.16)),
         (0.030, (1.00, 0.00, 0.00)),
@@ -182,6 +175,8 @@ gist_data = {
 # Maps pulled from papers
 #------------------------------------------------------------------------------#
 def png2rgb(file):
+    """Generates LinearSegmentedColormaps from zoomed-in PNG screenshots of
+    colorbars. Use this to load colormap examples you find in the wild."""
     # Load file
     img = Image.open(file)
     data = np.array(img)[...,:3]/255 # drop alpha channel and scale to 0-1
@@ -214,21 +209,27 @@ def png2rgb(file):
         vec = [rgb for rgb,count in zip(unique,counts) if count >= np.mean(counts)]
     return vec
 
-# Iterate through files
-files = glob.glob(os.path.join(os.path.dirname(__file__), 'cmaps', 'cmap[0-9].png'))
-paper_data = {
-    os.path.splitext(os.path.basename(file))[0]: png2rgb(file)
-    for file in files
-    }
-
 #------------------------------------------------------------------------------#
 # Generate colormaps
 #------------------------------------------------------------------------------#
-cmaps = []
-for name,data in {**matlab_data, **gnu_data, **gist_data, **paper_data}.items():
-    if isinstance(data, dict):
-        cmap = mcolors.LinearSegmentedColormap(name, data, lut)
-    else:
-        cmap = mcolors.LinearSegmentedColormap.from_list(name, data, lut)
-    mcm.cmap_d[name] = cmap
-    cmaps.append(name)
+def load_cmaps():
+    """Returns a list of "bad" colormap names, and registers them."""
+    # Iterate through screenshots
+    files = sorted(
+        glob.glob(os.path.join(os.path.dirname(__file__), '..', 'cmaps', '*.png'))
+        )
+    screenshot_data = {
+        'screenshot' + str(i+1): png2rgb(file)
+        for i,file in enumerate(files)
+        }
+    # Register colormaps and return list
+    cmaps = []
+    for name,data in {**_hardcoded_data, **screenshot_data}.items():
+        if isinstance(data, dict):
+            cmap = mcolors.LinearSegmentedColormap(name, data, lut)
+        else:
+            cmap = mcolors.LinearSegmentedColormap.from_list(name, data, lut)
+        mcm.cmap_d[name] = cmap
+        cmaps.append(name)
+    return cmaps
+
