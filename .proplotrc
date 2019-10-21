@@ -1,0 +1,4 @@
+# Local configuration
+small: 10
+large: 12
+format: retina
