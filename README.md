@@ -1,8 +1,10 @@
-# Effective Use of Color in Climate Science Visualizations
-
 **Launch a binder here to run our notebooks and import custom colormaps:**
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bradyrx/climate_science_colormapping/master)
+
+---
+
+# Effective Use of Color in Climate Science Visualizations
 
 [Riley X. Brady](https://github.com/bradyrx) and [Luke Davis](https://github.com/lukelbd)
 
