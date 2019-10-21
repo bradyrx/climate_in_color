@@ -29,22 +29,28 @@ Can serve as inspiration when making qualitative colormaps (color cycles).
 1. [Color Hunt](https://colorhunt.co/)
 2. [Color Drop](https://colordrop.io/)
 3. [Adobe Color](https://color.adobe.com/explore)
-4. [Proplot API](https://proplot.readthedocs.io/en/latest/colors.html#making-your-own-colormaps)
 
 ### Design Your Own Colormaps
+
+Resources for making your own colormaps from scratch.
 
 1. [HCL Picker](http://tristen.ca/hcl-picker/#/hlc/6/1/15534C/E2E062)
 2. [Chroma.js](https://gka.github.io/palettes/)
 3. [HCL Wizard](http://hclwizard.org:64230/hclwizard/)
-4. 
+4. [Proplot API](https://proplot.readthedocs.io/en/latest/colors.html#making-your-own-colormaps)
 
 ### Design Your Own Color Cycles
+
+Resources for making your own color cycles from scratch.
 
 1. [Color Cycle Picker](https://colorcyclepicker.mpetroff.net/)
 2. [i want hue](http://medialab.github.io/iwanthue/)
 3. [Coolors](https://coolors.co/)
 4. [Proplot API](https://proplot.readthedocs.io/en/latest/colors.html#making-your-own-color-cycles)
 
-### Testing Your Color Maps and Color Cycles
+### Testing Your Colormaps and Color Cycles
+
+It's always good to test your colormaps and color cycles to check that they are perceptually uniform and colorblind-friendly.
 
 1. [Viz Palette](https://projects.susielu.com/viz-palette) - Will check colorblind friendliness, contrast, and even whether or not they have "name" conflicts for when pointing out colors during a talk.
+2. [Proplot API](https://proplot.readthedocs.io/en/latest/colors.html#perceptually-uniform-colormaps)
