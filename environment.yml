@@ -1,0 +1,15 @@
+name: climate-science-colormapping
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - pandas
+  - xarray
+  - matplotlib
+  - basemap
+  - cartopy
+  - jupyter
+  - pyyaml
+  - pip
+  - pip: 
+      - git+https://github.com/lukelbd/proplot.git
