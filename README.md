@@ -4,7 +4,11 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/bradyrx/climate_science_colormapping/master)
 
-Riley X. Brady and Luke Davis
+[Riley X. Brady](https://github.com/bradyrx) and [Luke Davis](https://github.com/lukelbd)
+
+Contact: 
+* riley.brady@colorado.edu
+* luke.davis@colostate.edu
 
 This repository holds materials for a 90-minute workshop on building and utilizing effective colormaps for climate science visualizations. The workshop begins with a 15-minute presentation on colormap basics (e.g., different types of colormaps with examples and best practices for usage), followed by a 15-minute presentation on the more quantitative aspects of evaluating colormaps, and then a 60-minute period (including presentations) where participants use online tools to build their own colormaps.
 
