@@ -14,7 +14,7 @@ Contact:
 
 This repository holds materials for a 90-minute workshop on building and utilizing effective colormaps for climate science visualizations. The workshop begins with a 15-minute presentation on colormap basics (e.g., different types of colormaps with examples and best practices for usage), followed by a 15-minute presentation on the more quantitative aspects of evaluating colormaps, and then a 60-minute period (including presentations) where participants use online tools to build their own colormaps.
 
-You can find the color usage documentation for `proplot` [here](https://proplot.readthedocs.io/en/latest/colors.html) as well as installation instructions. `proplot` is a `matplotlib` wrapper written by Luke Davis with an extremely robust colormapping and color cycling module. We use it under the hood in this tutorial, but you can find more details on the documentation for building your own colormaps and color cycles through `proplot`.
+You can find the color usage documentation for `proplot` [here](https://proplot.readthedocs.io/en/latest/colormaps.html) as well as installation instructions. `proplot` is a `matplotlib` wrapper written by Luke Davis with an extremely robust colormapping and color cycling module. We use it under the hood in this tutorial, but you can find more details on the documentation for building your own colormaps and color cycles through `proplot`.
 
 ## Helpful Links
 
