@@ -1,5 +1,6 @@
 name: climate-science-colormapping
 channels:
+  - default
   - conda-forge
 dependencies:
   - numpy
@@ -9,7 +10,6 @@ dependencies:
   - basemap
   - cartopy
   - jupyter
-  - pyyaml
   - netcdf4
   - pip
   - pip: 
