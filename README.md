@@ -6,7 +6,7 @@
 
 # Effective Use of Color in Climate Science Visualizations
 
-[Riley X. Brady](https://github.com/bradyrx) and [Luke Davis](https://github.com/lukelbd)
+[Riley X. Brady](https://github.com/bradyrx) and [Luke L. B. Davis](https://github.com/lukelbd)
 
 Contact: 
 * riley.brady@colorado.edu
