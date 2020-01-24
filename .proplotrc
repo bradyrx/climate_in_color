@@ -1,4 +1,5 @@
 # Local configuration
 small: 10
 large: 12
-format: retina
+inlinefmt: retina
+savefig.transparent: False
