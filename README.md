@@ -40,10 +40,12 @@ Can serve as inspiration when making qualitative colormaps (color cycles).
 
 Resources for making your own colormaps from scratch.
 
-1. [HCL Picker](http://tristen.ca/hcl-picker/#/hlc/6/1/15534C/E2E062)
-2. [Chroma.js](https://gka.github.io/palettes/)
-3. [HCL Wizard](http://hclwizard.org:64230/hclwizard/)
-4. [Proplot API](https://proplot.readthedocs.io/en/latest/colors.html#making-your-own-colormaps)
+#. [CCC Tool](https://ccctool.com/)
+    * See the accompanying manuscript here: https://ieeexplore.ieee.org/abstract/document/8939459
+#. [HCL Picker](http://tristen.ca/hcl-picker/#/hlc/6/1/15534C/E2E062)
+#. [Chroma.js](https://gka.github.io/palettes/)
+#. [HCL Wizard](http://hclwizard.org:64230/hclwizard/)
+#. [Proplot API](https://proplot.readthedocs.io/en/latest/colors.html#making-your-own-colormaps)
 
 ### Design Your Own Color Cycles
 
