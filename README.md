@@ -59,4 +59,5 @@ Resources for making your own color cycles from scratch.
 It's always good to test your colormaps and color cycles to check that they are perceptually uniform and colorblind-friendly.
 
 1. [Viz Palette](https://projects.susielu.com/viz-palette) - Will check colorblind friendliness, contrast, and even whether or not they have "name" conflicts for when pointing out colors during a talk.
-2. [Proplot API](https://proplot.readthedocs.io/en/latest/colors.html#perceptually-uniform-colormaps)
+2. [Sim Daltonism](https://michelf.ca/projects/sim-daltonism/) and [Color Oracle](https://colororacle.org) - See what your screen looks like to people with various color vision deficiencies. Note that on Mac, you may have to give these applications permission to record your screen by going to System Preferences --> Security and Privacy --> Screen Recording and checking the box next to the application name.
+2. [Proplot API](https://proplot.readthedocs.io/en/latest/colors.html#perceptually-uniform-colormaps) -- The [plot.show_channels](https://proplot.readthedocs.io/en/latest/api/proplot.styletools.show_channels.html) function can be used to test the linearity of transitions in hue, chroma, luminance, and saturation.
