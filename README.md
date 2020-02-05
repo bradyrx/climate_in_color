@@ -22,44 +22,44 @@ You can find the color usage documentation for `proplot` [here](https://proplot.
 
 Here you can download colormaps for your language/GUI of choice.
 
-0. [cpt-city](http://soliton.vm.bytemark.co.uk/pub/cpt-city/) - Not well screened for _good_ colormaps, but a huge library of them to look through.
-0. [SciVisColor](https://sciviscolor.org/) - Science-focused colormaps created by the viz team at UT Austin.
-0. [cmocean](https://matplotlib.org/cmocean/) - Perceptually uniform colormaps for oceangoraphy. 
-0. [Fabio Crameri](http://www.fabiocrameri.ch/colourmaps.php) - Perceptually uniform colormaps for geosciences.
-0. [Color Brewer](http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) - One of the original resources for perceptually uniform colormaps. The strings from this page can be passed directly into `matplotlib`.
+1. [cpt-city](http://soliton.vm.bytemark.co.uk/pub/cpt-city/) - Not well screened for _good_ colormaps, but a huge library of them to look through.
+1. [SciVisColor](https://sciviscolor.org/) - Science-focused colormaps created by the viz team at UT Austin.
+1. [cmocean](https://matplotlib.org/cmocean/) - Perceptually uniform colormaps for oceangoraphy. 
+1. [Fabio Crameri](http://www.fabiocrameri.ch/colourmaps.php) - Perceptually uniform colormaps for geosciences.
+1. [Color Brewer](http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) - One of the original resources for perceptually uniform colormaps. The strings from this page can be passed directly into `matplotlib`.
 
 ### Color Palettes
 
 Can serve as inspiration when making qualitative colormaps (color cycles).
 
-0. [Color Hunt](https://colorhunt.co/)
-0. [Color Drop](https://colordrop.io/)
-0. [Adobe Color](https://color.adobe.com/explore)
+1. [Color Hunt](https://colorhunt.co/)
+1. [Color Drop](https://colordrop.io/)
+1. [Adobe Color](https://color.adobe.com/explore)
 
 ### Design Your Own Colormaps
 
 Resources for making your own colormaps from scratch.
 
-0. [CCC Tool](https://ccctool.com/)
+1. [CCC Tool](https://ccctool.com/)
     * See the accompanying manuscript here: https://ieeexplore.ieee.org/abstract/document/8939459
-0. [HCL Picker](http://tristen.ca/hcl-picker/#/hlc/6/1/15534C/E2E062)
-0. [Chroma.js](https://gka.github.io/palettes/)
-0. [HCL Wizard](http://hclwizard.org:64230/hclwizard/)
-0. [Proplot API](https://proplot.readthedocs.io/en/latest/colors.html#making-your-own-colormaps)
+1. [HCL Picker](http://tristen.ca/hcl-picker/#/hlc/6/1/15534C/E2E062)
+1. [Chroma.js](https://gka.github.io/palettes/)
+1. [HCL Wizard](http://hclwizard.org:64230/hclwizard/)
+1. [Proplot API](https://proplot.readthedocs.io/en/latest/colors.html#making-your-own-colormaps)
 
 ### Design Your Own Color Cycles
 
 Resources for making your own color cycles from scratch.
 
-0. [Color Cycle Picker](https://colorcyclepicker.mpetroff.net/)
-0. [i want hue](http://medialab.github.io/iwanthue/)
-0. [Coolors](https://coolors.co/)
-0. [Proplot API](https://proplot.readthedocs.io/en/latest/colors.html#making-your-own-color-cycles)
+1. [Color Cycle Picker](https://colorcyclepicker.mpetroff.net/)
+1. [i want hue](http://medialab.github.io/iwanthue/)
+1. [Coolors](https://coolors.co/)
+1. [Proplot API](https://proplot.readthedocs.io/en/latest/colors.html#making-your-own-color-cycles)
 
 ### Testing Your Colormaps and Color Cycles
 
 It's always good to test your colormaps and color cycles to check that they are perceptually uniform and colorblind-friendly.
 
-0. [Viz Palette](https://projects.susielu.com/viz-palette) - Will check colorblind friendliness, contrast, and even whether or not they have "name" conflicts for when pointing out colors during a talk.
-0. [Sim Daltonism](https://michelf.ca/projects/sim-daltonism/) and [Color Oracle](https://colororacle.org) - See what your screen looks like to people with various color vision deficiencies. Note that on Mac, you may have to give these applications permission to record your screen by going to System Preferences --> Security and Privacy --> Screen Recording and checking the box next to the application name.
-0. [Proplot API](https://proplot.readthedocs.io/en/latest/colors.html#perceptually-uniform-colormaps) -- The [plot.show_channels](https://proplot.readthedocs.io/en/latest/api/proplot.styletools.show_channels.html) function can be used to test the linearity of transitions in hue, chroma, luminance, and saturation.
+1. [Viz Palette](https://projects.susielu.com/viz-palette) - Will check colorblind friendliness, contrast, and even whether or not they have "name" conflicts for when pointing out colors during a talk.
+1. [Sim Daltonism](https://michelf.ca/projects/sim-daltonism/) and [Color Oracle](https://colororacle.org) - See what your screen looks like to people with various color vision deficiencies. Note that on Mac, you may have to give these applications permission to record your screen by going to System Preferences --> Security and Privacy --> Screen Recording and checking the box next to the application name.
+1. [Proplot API](https://proplot.readthedocs.io/en/latest/colors.html#perceptually-uniform-colormaps) -- The [plot.show_channels](https://proplot.readthedocs.io/en/latest/api/proplot.styletools.show_channels.html) function can be used to test the linearity of transitions in hue, chroma, luminance, and saturation.
