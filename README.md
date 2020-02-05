@@ -40,8 +40,7 @@ Can serve as inspiration when making qualitative colormaps (color cycles).
 
 Resources for making your own colormaps from scratch.
 
-1. [CCC Tool](https://ccctool.com/)
-    * See the accompanying manuscript here: https://ieeexplore.ieee.org/abstract/document/8939459
+1. [CCC Tool](https://ccctool.com/) - See the accompanying manuscript here: https://ieeexplore.ieee.org/abstract/document/8939459
 1. [HCL Picker](http://tristen.ca/hcl-picker/#/hlc/6/1/15534C/E2E062)
 1. [Chroma.js](https://gka.github.io/palettes/)
 1. [HCL Wizard](http://hclwizard.org:64230/hclwizard/)
